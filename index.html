@@ -405,6 +405,59 @@
         window.addEventListener("wheel", function(){}, {passive: true});
       </script>
   </body>
+  <!-- Baserow Popup Triggered After 10s -->
+<style>
+  #yage-popup-overlay {
+    display: none;
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: 9999;
+  }
+  #yage-popup {
+    background: #fff;
+    width: 90%;
+    max-width: 600px;
+    margin: 5% auto;
+    padding: 25px;
+    border-radius: 10px;
+    position: relative;
+  }
+  #yage-popup-close {
+    position: absolute;
+    top: 10px; right: 15px;
+    font-size: 20px;
+    border: none;
+    background: none;
+    cursor: pointer;
+  }
+  #yage-popup iframe {
+    width: 100%;
+    height: 500px;
+    border: none;
+    border-radius: 8px;
+  }
+</style>
+
+<div id="yage-popup-overlay">
+  <div id="yage-popup">
+    <button id="yage-popup-close">&times;</button>
+    <iframe src="https://baserow.yaogara.com/form/vpaVbSWgH7pXeopAG7PrGtDeGmf0x4alB2UOQQOvNJA"></iframe>
+  </div>
+</div>
+
+<script>
+  // Show popup after 10s
+  setTimeout(() => {
+    document.getElementById('yage-popup-overlay').style.display = 'block';
+  }, 10000);
+
+  // Close popup
+  document.getElementById('yage-popup-close').addEventListener('click', () => {
+    document.getElementById('yage-popup-overlay').style.display = 'none';
+  });
+</script>
 </html>
 
     <!--
@@ -412,12 +465,4 @@
       (No <img> tags currently in gallery or footer, but keep this for future additions.)
       Example: <img src="..." loading="lazy" alt="">
     -->
-    <!-- MailerLite Universal -->
-    <script>
-      (function(w,d,e,u,f,l,n){w[f]=w[f]||function(){(w[f].q=w[f].q||[])
-      .push(arguments);},l=d.createElement(e),l.async=1,l.src=u,
-      n=d.getElementsByTagName(e)[0],n.parentNode.insertBefore(l,n);})
-      (window,document,'script','https://assets.mailerlite.com/js/universal.js','ml');
-      ml('account', '476525');
-    </script>
-<!-- End MailerLite Universal -->
+  
