@@ -88,7 +88,11 @@
                 Awaken<br>
                 Transform
               </div>
-            </div><a class="btn btn-border-w btn-round btn-green-transparent" style="display: inline-block; min-height: 48px; min-width: 180px;" href="https://wa.me/573104430683" target="_blank" rel="noopener noreferrer">Chat on WhatsApp</a>
+            </div>
+            <div class="hero-ctas" style="display:flex; flex-direction:column; align-items:center;">
+              <a class="btn btn-border-w btn-round btn-green-transparent" style="display: inline-block; min-height: 48px; min-width: 180px;" href="https://wa.me/573104430683" target="_blank" rel="noopener noreferrer">Chat on WhatsApp</a>
+              <a id="open-newsletter" class="btn btn-border-w btn-round btn-green-transparent" style="display: inline-block; min-height: 48px; min-width: 180px; margin-top: 12px;" href="#newsletter-signup" role="button" aria-haspopup="dialog" aria-controls="yage-popup">Newsletter Signup</a>
+            </div>
           </div>
         </div>
       </section>
@@ -131,7 +135,10 @@
             <div class="row">
               <div class="col-sm-8 col-sm-offset-2">
                 <h2 class="module-title font-alt">Upcoming Retreats</h2>
-                
+                <div style="text-align: center; margin-bottom: 12px;">
+                  <p><a href="dec2025.html">December 2025: Yage retreat, 3 days (Click for details)</a></p>
+                </div>
+
                 <h2 class="module-title font-alt">Past Retreats</h2>
                 <div style="text-align: center; margin-bottom: 12px;">
                   <p>July 2025: Yage retreat, 10 days</p>
@@ -434,7 +441,7 @@
   }
   #yage-popup iframe {
     width: 100%;
-    height: 500px;
+    height: 300px;
     border: none;
     border-radius: 8px;
   }
@@ -448,15 +455,58 @@
 </div>
 
 <script>
-  // Show popup after 10s
-  setTimeout(() => {
-    document.getElementById('yage-popup-overlay').style.display = 'block';
-  }, 10000);
+  // Handle popup open/close and auto-trigger
+  (function () {
+    const overlay = document.getElementById('yage-popup-overlay');
+    const closeBtn = document.getElementById('yage-popup-close');
+    const openBtn = document.getElementById('open-newsletter');
 
-  // Close popup
-  document.getElementById('yage-popup-close').addEventListener('click', () => {
-    document.getElementById('yage-popup-overlay').style.display = 'none';
-  });
+    function openPopup() {
+      if (overlay) {
+        overlay.style.display = 'block';
+      }
+      if (window.yagePopupTimeout) {
+        clearTimeout(window.yagePopupTimeout);
+        window.yagePopupTimeout = null;
+      }
+    }
+
+    function closePopup() {
+      if (overlay) {
+        overlay.style.display = 'none';
+      }
+      if (window.yagePopupTimeout) {
+        clearTimeout(window.yagePopupTimeout);
+        window.yagePopupTimeout = null;
+      }
+    }
+
+    // Auto open after 10 seconds (one-shot)
+    window.yagePopupTimeout = setTimeout(openPopup, 10000);
+
+    // Wire up CTA button to open popup immediately
+    if (openBtn) {
+      openBtn.addEventListener('click', function (e) {
+        e.preventDefault();
+        openPopup();
+      });
+    }
+
+    // Close button
+    if (closeBtn) {
+      closeBtn.addEventListener('click', closePopup);
+    }
+
+    // Optional: close on overlay click (outside the popup)
+    overlay && overlay.addEventListener('click', function (e) {
+      if (e.target === overlay) closePopup();
+    });
+
+    // Optional: close on ESC key
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape') closePopup();
+    });
+  })();
 </script>
 </html>
 
