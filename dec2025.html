@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yage Retreat with Carlos</title>
+    
+    <link rel="stylesheet" href="httpshttps://assets.mlcdn.com/fonts-v2.css?version=1758197">
+    
+    <style>
+        /* --- 1. Global & Reset Styles --- */
+        body {
+            margin: 0;
+            font-family: 'Inter', sans-serif;
+            background-color: #F4F7FA;
+            color: #6B7280;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        /* --- 2. Main Wrapper --- */
+        /* This is the main white box holding all the content */
+        .wrapper {
+            max-width: 640px;
+            margin: 20px auto;
+            border: 1px solid #EAECED;
+            border-radius: 8px;
+            background-color: #ffffff;
+            overflow: hidden; /* Keeps the rounded corners */
+        }
+
+        /* --- 3. Content Sections --- */
+        /* We use a standard padding for all content sections */
+        .header, .summary, .content, .footer {
+            padding: 30px 50px;
+        }
+
+        /* --- Header Section --- */
+        .header {
+            text-align: center;
+        }
+        .hero-image {
+            width: 100%;
+            max-width: 540px; /* From original code */
+            height: auto;
+            margin-bottom: 30px;
+        }
+        .header h1 {
+            color: #000000;
+            font-size: 36px;
+            line-height: 1.25;
+            font-weight: bold;
+            margin: 0 0 10px 0;
+        }
+        .header h3 {
+            color: #000000;
+            font-size: 18px;
+            line-height: 1.25;
+            font-weight: bold;
+            margin: 0 0 8px 0;
+        }
+        .header p {
+            font-size: 16px;
+            line-height: 1.65;
+            margin: 0;
+        }
+
+        /* --- Button Style --- */
+        .button {
+            display: inline-block;
+            background-color: #28a745;
+            color: #ffffff;
+            padding: 14px 25px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: normal;
+            margin-top: 30px;
+        }
+
+        /* --- Summary Section --- */
+        .summary {
+            display: flex; /* Modern CSS! */
+            align-items: center;
+            gap: 30px; /* Space between image and text */
+            border-top: 1px solid #EAECED;
+            border-bottom: 1px solid #EAECED;
+        }
+        .summary-icon {
+            width: 160px;
+            height: auto;
+            flex-shrink: 0;
+        }
+        .summary p {
+            font-size: 16px;
+            line-height: 1.65;
+            margin: 0;
+        }
+        .summary strong {
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        /* --- Main Content Section --- */
+        .content p {
+            font-size: 16px;
+            line-height: 1.65;
+            margin: 0 0 15px 0; /* Space between paragraphs */
+            text-align: justify;
+        }
+        .content ol {
+            font-size: 16px;
+            line-height: 1.65;
+            margin: 0 0 15px 0;
+            padding-left: 25px;
+        }
+        .content li {
+            margin-bottom: 10px;
+        }
+        .content a {
+            color: #4F46E5;
+            text-decoration: underline;
+        }
+        .content strong {
+            color: #333; /* Make titles slightly darker */
+        }
+        .contact-links {
+            text-align: left; /* Override justify for this block */
+        }
+
+        /* --- Footer Section --- */
+        .footer {
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+            background-color: #ffffff;
+            border-top: 1px solid #EAECED;
+            font-size: 14px;
+            line-height: 1.5;
+        }
+        .footer h5 {
+            font-size: 15px;
+            font-weight: bold;
+            color: #000000;
+            margin: 0 0 6px 0;
+        }
+        .footer p {
+            font-size: 14px;
+            margin: 0 0 6px 0;
+        }
+        .footer a {
+            color: #515856;
+        }
+        .social-links img {
+            width: 18px;
+            height: 18px;
+            margin-right: 5px;
+        }
+
+        /* --- 4. Mobile Responsive Styles --- */
+        @media (max-width: 639px) {
+            .wrapper {
+                width: 100%;
+                margin: 0;
+                border: none;
+                border-radius: 0;
+            }
+            .header, .summary, .content, .footer {
+                padding: 20px; /* Reduce padding on mobile */
+            }
+            /* Stack summary and footer vertically on mobile */
+            .summary, .footer {
+                flex-direction: column;
+                text-align: center;
+            }
+            .footer {
+                gap: 30px; /* Add more space when stacked */
+            }
+            .content p, .content ol {
+                text-align: left; /* Disable justify on mobile */
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="wrapper">
+
+        <header class="header">
+            <img src="https://bucket.mailersendapp.com/z3m5jgr8emldpyo6/86org8e5nwkgew13/images/9fedcbd2-1835-4241-a4a6-448ad0a8d506.jpg" alt="A peaceful forest path" class="hero-image">
+            <h1>Yage Retreat with Carlos</h1>
+            <h3>December 2025 in Stockholm</h3>
+            <p>Traditional Yage ceremony in a beautiful and comfortable natural setting about 1h from Stockholm.</p>
+            <a href="https://baserow.yaogara.com/form/BXx5YXcxqN3TqsIdjSiBD8ZEDSKoj7H7MBOTd24npQQ" class="button">Application Form</a>
+        </header>
+
+        <section class="summary">
+            <img src="https://bucket.mailersendapp.com/z3m5jgr8emldpyo6/86org8e5nwkgew13/images/9fedce4e-2b93-4ad1-a4bf-3a10c129aef3.png" alt="Geometric icon" class="summary-icon">
+            <div class="summary-text">
+                <strong>Retreat Summary</strong>
+                <p>December 12-13-14 (3 nights)<br>
+                   Location: Stockholm Area<br>
+                   Price: 8000 kr<br>
+                   Includes: Ceremonies, Food, Shared room &amp; Additional therapies</p>
+            </div>
+        </section>
+
+        <main class="content">
+            <p><strong>Dear friends,</strong></p>
+            <p>We hope this message finds you well.</p>
+            <p>We’re honoured to invite you to a weekend of sacred medicine ceremonies this December in Stockholm. Once again, we welcome Carlos and his team from Spain for an intimate retreat hosted by the Yage Community. For those who have joined us before, you’ll recognise the same spirit, depth, and tradition guiding the work—rooted in profound healing and connection.</p>
+            <p>Carlos is a traditional medicine man from Putumayo, a region in southern Colombia deeply connected to the Amazon rainforest and its ancestral wisdom. His journey as a spiritual guide and healer has been shaped by years of learning and service in his community, where he has received and honoured the traditions of one of the Amazon’s Indigenous peoples with respect, commitment, and care.</p>
+            <p>He is also part of <a href="https://yaogara.com/ayahuasca-retreat-colombia/">Camino al Sol</a>, a sacred nature retreat center in the Colombian Andes dedicated to preserving and sharing these ancestral traditions.</p>
+            <p>Beyond his role as a healer, Carlos expresses the medicine through painting, music, and photography. These creative forms emerge from his deep relationship with the spirit of the medicine and serve as bridges for emotional, cultural, and spiritual connection.</p>
+            <p>His ceremonies unfold as deeply moving journeys carried by music, experiences both powerful and heart-opening. Those who have sat with him describe his presence as calm, his words as clear, and his actions as rooted in a deep reverence for life and tradition.</p>
+            <p>If you feel the call to join, we would love to share this journey with you.</p>
+            <p>With warmth and gratitude,<br><strong>Yage Community</strong></p>
+            
+            <p><strong>Retreat Details</strong></p>
+            <p>
+                &#127800; Dates: December 12-14, 2025 <br>
+                &#127800; Location: Stockholm area (exact details revealed prior to the retreat) <br>
+                &#127800; Price: 8000 kr<br>
+                &#127800; Includes: ceremonies, plant bath, fire cleanse, bed in shared bedroom, matres in ceremony space, all meals during the retreat (breakfast, lunch, snacks)<br>
+                &#127800; Reserve your spot: <a href="https://baserow.yaogara.com/form/BXx5YXcxqN3TqsIdjSiBD8ZEDSKoj7H7MBOTd24npQQ">Signup Form</a>
+            </p>
+            <p>&#127800; <strong>Important information for women</strong>: in the Colombia tradition there are restrictions for women to participate during their menstrual cycle. Please follow <a href="https://www.yaogara.com/information-for-women" title="Women">THIS</a> link for further information.</p>
+            
+            <p><strong>Retreat Schedule</strong></p>
+            <p>We recommend arriving by 5 pm to settle in and prepare for the ceremony. Individual talks with the facilitators and preparatory cleaning rituals will help create the optimal environment for your journey. The ceremonies typically commence at 10 pm, lasting until 6 am, followed by breakfast and lunch throughout the retreat.</p>
+            
+            <p><strong>Prepare for an Enriching Experience</strong></p>
+            <p>The power of the medicine is amplified when combined with personal dedication and preparation. We recommend starting a two-week diet prior to the ceremony, encompassing not only your dietary choices but also your mental and physical practices. Engage in spiritually uplifting material, immerse yourself in nature, maintain a clean diet, and dedicate time to daily meditation.</p>
+            
+            <p><strong>Book Your Spot and Take the Next Step</strong></p>
+            <ol>
+                <li>Apply for the available ceremonies through our online form: <a href="https://baserow.yaogara.com/form/BXx5YXcxqN3TqsIdjSiBD8ZEDSKoj7H7MBOTd24npQQ">Signup Form</a></li>
+                <li>Complete the medical form and pay a 50% deposit to confirm your participation. Instructions will be provided after Step 1</li>
+            </ol>
+            
+            <p><strong>Your Journey Begins Here</strong></p>
+            <p>If you have any questions or would like to schedule a personal phone call to address your concerns, please reach out to us through any of the following channels.</p>
+            <p class="contact-links">
+                Facebook messenger: <a href="http://www.m.me/yage.se">m.me/yage.se</a><br>
+                WhatsApp: <a href="https://wa.me/573104430683">https://wa.me/573104430683</a><br>
+                Instagram: <a href="https://www.instagram.com/yageswe">instagram.com/yageswe</a><br>
+                E-mail: <a href="mailto:aya@yage.se?subject=Retreat questions">aya@yage.se</a>
+            </p>
+        </main>
+
+        <footer class="footer">
+            <div class="footer-company">
+                <h5>Yage.se</h5>
+                <p>Stockholm, Sweden</p>
+                <div class="social-links">
+                    <a href="https://www.facebook.com/yage.se" target="blank"><img src="https://assets.mlcdn.com/ml/images/icons/default/rounded_corners/black/facebook.png" alt="facebook"></a>
+                    <a href="https://www.instagram.com/yageswe" target="blank"><img src="https://assets.mlcdn.com/ml/images/icons/default/rounded_corners/black/instagram.png" alt="instagram"></a>
+                    <a href="https://www.yage.se" target="blank"><img src="https://assets.mlcdn.com/ml/images/icons/default/rounded_corners/black/website.png" alt="website"></a>
+                    <a href="https://wa.me/573104430683" target="blank"><img src="https://assets.mlcdn.com/ml/images/icons/default/rounded_corners/black/whatsapp.png" alt="whatsapp"></a>
+                    <a href="mailto:aya@yage.se" target="blank"><img src="https://assets.mlcdn.com/ml/images/icons/default/rounded_corners/black/email.png" alt="email"></a>
+                </div>
+            </div>
+            <div class="footer-unsubscribe">
+                <p>You received this email because you signed up on our website or sign-up form.</p>
+                <p><a href="[UNSUBSCRIBE_LINK_HERE]">Unsubscribe here</a></p>
+            </div>
+        </footer>
+
+    </div></body>
+</html>
