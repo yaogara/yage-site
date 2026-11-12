@@ -18,7 +18,7 @@ The original root-level website stays on main during preparation. Its pre-migrat
 
 - JavaScript syntax and local asset references checked.
 - English / Swedish toggle, animation pause/resume and newsletter iframe checked in browser.
-- Controlled signup through the Pages preview displayed success and persisted an active subscriber in Baserow table 709. Welcome email delivery remains unverified and must be checked separately; storage success alone does not prove email delivery.
+- Controlled signup through the Pages preview displayed success and persisted an active subscriber in Baserow table 709. Welcome email delivery was repaired and verified through the live domain on November 12, 2026; see Newsletter below.
 - Legacy index and December 2025 URLs have permanent redirects.
 - Canonical and Open Graph URLs use yage.se; sitemap and robots are included.
 
@@ -30,4 +30,10 @@ Before cutover on November 12, 2026, both yage.se and www.yage.se were CNAME rec
 
 PR #1 was merged as 31f51049ade66b08838c542c084f1b7767dc6bd6 after the Pages preview and live-domain checks. Both custom domains are Active with SSL enabled. The apex and www CNAMEs point to yage-site.pages.dev, proxied, TTL Auto. All seven other DNS records were preserved, including MX, DKIM, SPF, and Vercel verification TXT records.
 
-The enabled Single Redirect `Yagé www to canonical apex` (rule ID 4a6db218370b4dd4a363b31385ac289c) matches `*://www.yage.se/*`, redirects to `https://yage.se/${2}` with status 301, and preserves query strings. HTTP apex requests redirect to HTTPS. Legacy links, static assets, robots, sitemap, and custom 404 behavior passed HTTP checks on the live domain. Controlled signup through the live domain displayed success and persisted an active subscriber in Baserow. Automatic welcome email delivery remains unverified.
+The enabled Single Redirect `Yagé www to canonical apex` (rule ID 4a6db218370b4dd4a363b31385ac289c) matches `*://www.yage.se/*`, redirects to `https://yage.se/${2}` with status 301, and preserves query strings. HTTP apex requests redirect to HTTPS. Legacy links, static assets, robots, sitemap, and custom 404 behavior passed HTTP checks on the live domain. Controlled signup through the live domain displayed success and persisted an active subscriber in Baserow. Automatic welcome email delivery is verified; see Newsletter below.
+
+## Newsletter — verified November 12, 2026
+
+The Baserow form creates subscribers in table 709. Its rows.created webhook triggers n8n workflow `Yage - Welcome Emails` (OClrdMkKIp5uZv64). The workflow uses existing credential `Mailersend API - July 2026` and sends a bilingual English/Swedish welcome from aya@yage.se with subject `Welcome to Yagé / Välkommen till Yagé`, then sets welcomeSent in Baserow. Content is stored directly as HTML/text in the email node because the previous provider template was missing and creating provider templates required a paid plan. Do not restore obsolete template ID x2p0347oy07gzdrn or the old embedded API key.
+
+A controlled live-domain signup completed all three nodes in execution 6151, set welcomeSent true, and delivered the welcome email to the controlled Gmail inbox. Current verified published workflow version: 6cdde9f4-f1e8-4261-83a7-65b83670a21b. Secrets remain in n8n credentials, not in this repository. Unsubscribe instructions direct recipients to reply to aya@yage.se.
