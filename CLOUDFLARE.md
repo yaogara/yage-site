@@ -2,7 +2,7 @@
 
 - Repository: yaogara/yage-site
 - Launch branch: launch/cloudflare-redesign
-- Production branch after launch: main
+- Production branch: main (automatic deployments enabled)
 - Pages project: yage-site (https://yage-site.pages.dev)
 - Framework preset: None
 - Build command: leave blank
@@ -25,3 +25,9 @@ The original root-level website stays on main during preparation. Its pre-migrat
 ## Rollback
 
 Before cutover on November 12, 2026, both yage.se and www.yage.se were CNAME records to c96e3b443ba47c0d.vercel-dns-017.com, DNS only, TTL 600. If the new host fails, restore only those web records and retain all email and verification records. Disable the new www redirect rule if restoring the previous routing requires it. Keep a complete DNS snapshot before cutover. The old GitHub Pages source and custom-domain CNAME remain in this repository, but the observed pre-cutover DNS target was Vercel.
+
+## Launch verification — November 12, 2026
+
+PR #1 was merged as 31f51049ade66b08838c542c084f1b7767dc6bd6 after the Pages preview and live-domain checks. Both custom domains are Active with SSL enabled. The apex and www CNAMEs point to yage-site.pages.dev, proxied, TTL Auto. All seven other DNS records were preserved, including MX, DKIM, SPF, and Vercel verification TXT records.
+
+The enabled Single Redirect `Yagé www to canonical apex` (rule ID 4a6db218370b4dd4a363b31385ac289c) matches `*://www.yage.se/*`, redirects to `https://yage.se/${2}` with status 301, and preserves query strings. HTTP apex requests redirect to HTTPS. Legacy links, static assets, robots, sitemap, and custom 404 behavior passed HTTP checks on the live domain. Controlled signup through the live domain displayed success and persisted an active subscriber in Baserow. Automatic welcome email delivery remains unverified.
