@@ -1,4 +1,4 @@
-https://www.yage.se/* https://yage.se/:splat 301
+# Host redirects are configured in Cloudflare Rules; Pages only accepts relative sources.
 /index.html / 301
 /index / 301
 /dec2025.html /#retreater 301
