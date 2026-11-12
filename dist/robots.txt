@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://yage.se/sitemap.xml
